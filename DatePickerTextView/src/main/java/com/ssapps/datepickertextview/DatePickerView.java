@@ -42,6 +42,11 @@ public class DatePickerView extends LinearLayout {
 
             String format = attributes.getString(R.styleable.DatePickerView_dateFormat);
             setDateFormat(format==null?"dd/MM/yyyy":format);
+
+            int textColor = attributes.getColor(R.styleable.DatePickerView_textColor, -1);
+            if (textColor != -1){
+                binding.dateText.setTextColor(textColor);
+            }
         } finally {
             attributes.recycle();
         }
@@ -78,5 +83,35 @@ public class DatePickerView extends LinearLayout {
     public String getSelectedDate() {
         return binding.dateText.getText().toString();
     }
+    /**
+     * Sets the date using a string and a specific format.
+     */
+    public void setDate(String date, String format) {
+        try {
+            SimpleDateFormat customDateFormat = new SimpleDateFormat(format, Locale.getDefault());
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(customDateFormat.parse(date));
+            binding.dateText.setText(dateFormat.format(calendar.getTime()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException("Invalid date or format provided");
+        }
+    }
+
+    /**
+     * Sets the date using a string in the default format.
+     */
+    public void setDate(String date) {
+        try {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(dateFormat.parse(date));
+            binding.dateText.setText(dateFormat.format(calendar.getTime()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException("Invalid date provided for the default format");
+        }
+    }
+
+
 }
 

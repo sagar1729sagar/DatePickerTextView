@@ -3,5 +3,6 @@
     <declare-styleable name="DatePickerView">
         <attr name="icon" format="reference" />
         <attr name="dateFormat" format="string" />
+        <attr name="textColor" format="color" />
     </declare-styleable>
 </resources>
