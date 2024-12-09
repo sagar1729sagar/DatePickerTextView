@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DatePiccker_TextView</string>
+    <string name="select_a_date">Select a date</string>
+</resources>
