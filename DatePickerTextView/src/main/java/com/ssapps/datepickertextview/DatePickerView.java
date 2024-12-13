@@ -23,7 +23,7 @@ public class DatePickerView extends LinearLayout {
     private final @NonNull DatePickerViewBinding binding;
 
     private SimpleDateFormat dateFormat;
-
+    private OnDateChangedListener OnDateChangedListener;
     public DatePickerView(Context context, @Nullable AttributeSet attrs){
         super(context, attrs);
 
@@ -61,7 +61,12 @@ public class DatePickerView extends LinearLayout {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         calendar.set(year, month, dayOfMonth);
-                        binding.dateText.setText(dateFormat.format(calendar.getTime()));
+                        String new_date = dateFormat.format(calendar.getTime());
+                        binding.dateText.setText(new_date);
+
+                        if (OnDateChangedListener != null){
+                            OnDateChangedListener.onDateChanged(new_date);
+                        }
                     }
                 };
 
@@ -112,6 +117,9 @@ public class DatePickerView extends LinearLayout {
         }
     }
 
+    public void setOnDateChangedListener(OnDateChangedListener listener){
+        this.OnDateChangedListener = listener;
+    }
 
 }
 
