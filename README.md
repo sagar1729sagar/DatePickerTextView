@@ -16,8 +16,8 @@ A customizable Android library for date selection that allows you to set custom 
 ---
 
 
-### Demo
-![Alt text](screenshot.jpg)
+### Screenshot
+![Alt text](reference.jpg)
 
 
 
