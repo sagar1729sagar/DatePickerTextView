@@ -36,7 +36,7 @@ Add the following to the `build.gradle` (Module:app):
 
 ```groovy
 dependencies {
-    implementation 'com.github.sagar1729sagar:DatePickerTextView:v1.0.1'
+    implementation 'com.github.sagar1729sagar:DatePickerTextView:v1.0.3'
 }
 ```
 
