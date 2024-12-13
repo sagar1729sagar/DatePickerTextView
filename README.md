@@ -16,13 +16,6 @@ A customizable Android library for date selection that allows you to set custom 
 ---
 
 
-### Demo
-
-<p>Watch the demo below:</p>
-<video src="https://drive.google.com/file/d/1n8Ef6BzPzxKhju_31lVx7ONQVVf4aRaF/view?usp=drive_link" width="600" autoplay loop muted controls>
-Your browser does not support the video tag.
-</video>
-
 
 ## Installation
 
