@@ -76,6 +76,21 @@ datePickerTextView.setDateFormat("MM-dd-yyyy")
 val selectedDate = datePickerTextView.getSelectedDate()
 ```
 
+###  Date Change Listener
+
+To handle date changes programmatically, use the `setOnDateChangeListener` method:
+
+```Java
+datePickerTextView.setOnDateChangeListener(new DatePickerTextView.OnDateChangeListener() {
+    @Override
+    public void onDateChanged(String newDate) {
+        // Handle the selected date
+        Toast.makeText(context, "Selected date: " + newDate, Toast.LENGTH_SHORT).show();
+    }
+});
+
+```
+
 ### Customization
 
 | Attribute     | Description                                      | Default value         |
